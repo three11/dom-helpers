@@ -1,0 +1,47 @@
+{
+  "name": "@three11/dom-helpers",
+  "version": "0.1.0",
+  "description": "Helper functions for faster DOM scripting",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/three11/dom-helpers.git"
+  },
+  "keywords": [
+    "DOM",
+    "Helpers",
+    "JavaScript",
+    "ES2017"
+  ],
+  "authors": [
+    {
+      "name": "Three 11 Ltd",
+      "email": "contact.three11@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Alexander Panayotov",
+      "email": "alexander.panayotov@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Atanas Atanasov",
+      "email": "scriptex.bg@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/three11/dom-helpers/issues"
+  },
+  "homepage": "https://github.com/three11/dom-helpers#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-stage-2": "^7.0.0-beta.42"
+  }
+}
