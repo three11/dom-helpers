@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/dt/@three11/dom-helpers.svg)](https://www.npmjs.com/package/@three11/dom-helpers)
+
 # dom-helpers
 
 Helper functions for faster DOM scripting
