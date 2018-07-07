@@ -12,6 +12,8 @@
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/three11/dom-helpers/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/three11/dom-helpers/graphs/commit-activity)
 [![Greenkeeper badge](https://badges.greenkeeper.io/three11/dom-helpers.svg)](https://greenkeeper.io/)
+[![dependencies Status](https://david-dm.org/three11/dom-helpers/status.svg)](https://david-dm.org/three11/dom-helpers)
+[![devDependencies Status](https://david-dm.org/three11/dom-helpers/dev-status.svg)](https://david-dm.org/three11/dom-helpers?type=dev)
 
 [![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/three11/)
 
@@ -21,14 +23,30 @@ Helper functions for faster DOM scripting
 
 ## Install
 
-```console
+```sh
 yarn add @three11/dom-helpers
 ```
 
 or
 
-```console
+```sh
 npm i @three11/dom-helpers
+```
+
+or
+
+Just download this repository and link the files located in dist folder:
+
+```html
+<script src="path-to-dom-helpers/dist/dom-helpers.min.js"></script>
+```
+
+or
+
+Include it from Unpkg CDN
+
+```html
+<script src="//unpkg.com/@three11/dom-helpers/dist/dom-helpers.min.js"></script>
 ```
 
 ## Usage
@@ -41,19 +59,13 @@ or
 
 Import each function separately.
 
-See functions list below.
+See functions list below:
 
-or
-
-Just download this repository and link the files located in dist folder:
-
-```html
-<script src="dist/index.min.js"></script>
 ```
-
 ## Functions
 
 *   `byID` - retrieves an element by ID
 *   `single` - retrieves an element by a given valid css selector
 *   `multi` - retrieves a collection of elements and normalizes the return value
 *   `addListener` - attaches an event listener to element
+```
