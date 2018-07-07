@@ -2,9 +2,9 @@ const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 
 module.exports = {
 	mode: 'production',
-	entry: './src/index.js',
+	entry: './src/dom-helpers.js',
 	output: {
-		filename: 'index.min.js',
+		filename: 'dom-helpers.min.js',
 		library: 'AnimateMe',
 		libraryTarget: 'umd'
 	},
