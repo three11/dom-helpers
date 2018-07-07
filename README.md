@@ -3,7 +3,7 @@
 [![GitHub release](https://img.shields.io/github/release/three11/dom-helpers.svg)](https://github.com/three11/dom-helpers/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/three11/dom-helpers.svg)](https://github.com/three11/dom-helpers/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/three11/dom-helpers.svg)](https://github.com/three11/dom-helpers/commits/master)
-[![Github file size](https://img.shields.io/github/size/three11/dom-helpers/dist/index.min.js.svg)](https://github.com/three11/dom-helpers/)
+[![Github file size](https://img.shields.io/github/size/three11/dom-helpers/dist/dom-helpers.min.js.svg)](https://github.com/three11/dom-helpers/)
 [![Build Status](https://travis-ci.org/three11/dom-helpers.svg?branch=master)](https://travis-ci.org/three11/dom-helpers)
 [![npm](https://img.shields.io/npm/dt/@three11/dom-helpers.svg)](https://www.npmjs.com/package/@three11/dom-helpers)
 [![npm](https://img.shields.io/npm/v/@three11/dom-helpers.svg)](https://www.npmjs.com/package/@three11/dom-helpers)
@@ -69,3 +69,7 @@ See functions list below:
 *   `multi` - retrieves a collection of elements and normalizes the return value
 *   `addListener` - attaches an event listener to element
 ```
+
+## License
+
+GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
