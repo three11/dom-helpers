@@ -43,7 +43,7 @@ Include it from Unpkg CDN
 ## Usage
 
 ```javascript
-import * as helpers from '@three11/dom-helpers';
+import { $, $$, listen } as helpers from '@three11/dom-helpers';
 ```
 
 or
@@ -52,13 +52,28 @@ Import each function separately.
 
 See functions list below:
 
-```
 ## Functions
 
-*   `byID` - retrieves an element by ID
-*   `single` - retrieves an element by a given valid css selector
-*   `multi` - retrieves a collection of elements and normalizes the return value
-*   `addListener` - attaches an event listener to element
+-   `$` - queries the DOM and obtains a single element
+-   `$$` - queries the DOM and obtains a collection of elements
+-   `enableListeners` - enables the custom `on` method for attaching of event listeners
+
+After you query your element(s) you can use jQuery-like syntax to add event listeners. Example below:
+
+```
+enableListeners();
+
+const button = $('#button');
+
+button.on('click', () => {
+    console.log('clicked a single button');
+});
+
+const buttons = $$('.button');
+
+buttons.on('click', () => {
+    console.log('clicked a button in a collection');
+});
 ```
 
 ## License
