@@ -43,7 +43,7 @@ Include it from Unpkg CDN
 ## Usage
 
 ```javascript
-import { $, $$, listen } as helpers from '@three11/dom-helpers';
+import { $, $$, enableListeners } from '@three11/dom-helpers';
 ```
 
 or
