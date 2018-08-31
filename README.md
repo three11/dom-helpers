@@ -12,6 +12,12 @@
 
 Helper functions for faster DOM scripting
 
+## NOTE:
+
+The latest version in the master branch is different than the latest release on Github and the latest release on NPM.
+There are major changes and modifications.
+This version is still a work in progress.
+
 ## Install
 
 ```sh
