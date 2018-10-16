@@ -16,7 +16,7 @@
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
-  _exports.enableListeners = _exports.$$ = _exports.$ = void 0;
+  _exports.trigger = _exports.insertBefore = _exports.insertAfter = _exports.toggleClass = _exports.removeClass = _exports.addClass = _exports.hasClass = _exports.getScrollPosition = _exports.isElementVisibleInViewport = _exports.enableListeners = _exports.$$ = _exports.$ = void 0;
 
   var _this = void 0;
 
@@ -50,6 +50,10 @@
     var startNode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : D;
     return _toConsumableArray(startNode.querySelectorAll(selector));
   };
+  /**
+   * Enable jQuery-like syntax for attaching of event listeners
+   */
+
 
   _exports.$$ = $$;
 
@@ -87,21 +91,100 @@
     };
   };
   /**
-   * Usage
-   *
-   * const button = $('#button');
-   *
-   * button.on('click', () => {
-   *     console.log('clicked a single button');
-   * });
-   *
-   * const buttons = $$('.button');
-   *
-   * buttons.on('click', () => {
-   *     console.log('clicked a button in a collection');
-   * });
+   * Detect if an element is visible in the viewport
    */
 
 
   _exports.enableListeners = enableListeners;
+
+  var isElementVisibleInViewport = function isElementVisibleInViewport(el) {
+    var isPartiallyVisible = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+    var _el$getBoundingClient = el.getBoundingClientRect(),
+        top = _el$getBoundingClient.top,
+        right = _el$getBoundingClient.right,
+        bottom = _el$getBoundingClient.bottom,
+        left = _el$getBoundingClient.left;
+
+    var _window = window,
+        innerWidth = _window.innerWidth,
+        innerHeight = _window.innerHeight;
+    return isPartiallyVisible ? (top > 0 && top < innerHeight || bottom > 0 && bottom < innerHeight) && (left > 0 && left < innerWidth || right > 0 && right < innerWidth) : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+  };
+  /**
+   * Returns the scroll position of an element
+   */
+
+
+  _exports.isElementVisibleInViewport = isElementVisibleInViewport;
+
+  var getScrollPosition = function getScrollPosition() {
+    var el = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window;
+    return {
+      x: el.pageXOffset || el.scrollLeft,
+      y: el.pageYOffset || el.scrollTop
+    };
+  };
+  /**
+   * Classname utilities
+   */
+
+
+  _exports.getScrollPosition = getScrollPosition;
+
+  var hasClass = function hasClass(el, className) {
+    return el.classList.contains(className);
+  };
+
+  _exports.hasClass = hasClass;
+
+  var addClass = function addClass(el, className) {
+    return el.classList.add(className);
+  };
+
+  _exports.addClass = addClass;
+
+  var removeClass = function removeClass(el, className) {
+    return el.classList.remove(className);
+  };
+
+  _exports.removeClass = removeClass;
+
+  var toggleClass = function toggleClass(el, className, force) {
+    return el.classList.toggle(className, force);
+  };
+  /**
+   * Insert HTML string after the element
+   */
+
+
+  _exports.toggleClass = toggleClass;
+
+  var insertAfter = function insertAfter(el, html) {
+    return el.insertAdjacentHTML('afterend', html);
+  };
+  /**
+   * Insert HTML string before the element
+   */
+
+
+  _exports.insertAfter = insertAfter;
+
+  var insertBefore = function insertBefore(el, html) {
+    return el.insertAdjacentHTML('beforebegin', html);
+  };
+  /**
+   * Trigger an event
+   */
+
+
+  _exports.insertBefore = insertBefore;
+
+  var trigger = function trigger(el, eventType, detail) {
+    return el.dispatchEvent(new CustomEvent(eventType, {
+      detail: detail
+    }));
+  };
+
+  _exports.trigger = trigger;
 });

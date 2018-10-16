@@ -49,7 +49,20 @@ Include it from Unpkg CDN
 ## Usage
 
 ```javascript
-import { $, $$, enableListeners } from '@three11/dom-helpers';
+import {
+	$,
+	$$,
+	trigger,
+	hasClass,
+	addClass,
+	removeClass,
+	toggleClass,
+	insertAfter,
+	insertBefore,
+	enableListeners,
+	getScrollPosition,
+	isElementVisibleInViewport
+} from '@three11/dom-helpers';
 ```
 
 or
@@ -60,26 +73,98 @@ See functions list below:
 
 ## Functions
 
--   `$` - queries the DOM and obtains a single element
--   `$$` - queries the DOM and obtains a collection of elements
--   `enableListeners` - enables the custom `on` method for attaching of event listeners
+`$` - queries the DOM and obtains a single element
 
-After you query your element(s) you can use jQuery-like syntax to add event listeners. Example below:
-
-```
-enableListeners();
-
+```javascript
 const button = $('#button');
+```
+
+-----
+
+`$$` - queries the DOM and obtains a collection of elements
+
+```javascript
+const buttons = $$('#button');
+```
+
+-----
+
+`enableListeners` - enables the custom `on` method for attaching of event listeners
+
+```javascript
+enableListeners();
 
 button.on('click', () => {
     console.log('clicked a single button');
 });
 
-const buttons = $$('.button');
-
 buttons.on('click', () => {
     console.log('clicked a button in a collection');
 });
+```
+
+-----
+
+`isElementVisibleInViewport` - accepts two arguments: DOM element and a boolean flag which states if the element should be partially visible. Returns boolean.
+
+``` javascript
+const element = document.getElementById('element');
+const isVisible = isElementVisibleInViewport(element, true);
+```
+
+-----
+
+- `getScrollPosition` - returns the scroll position of the passed DOM Element
+
+```javascript
+const element = document.getElementById('element');
+const scrollPosition = getScrollPosition(element);
+```
+
+-----
+
+- `hasClass` - Returns boolean true if the element has the specified class, false otherwise.
+- `addClass` - Adds the specified class to an element
+- `removeClass` - Removes the specified class from an element
+- `toggleClass` - Toggles the specified class on an element
+
+```javascript
+const element = document.getElementById('element');
+
+hasClass(element, 'test'); // false
+addClass(element, 'test');
+removeClass(element, 'test');
+
+/**
+ * The last argument forces the classname.
+ * If true the classname will be added,
+ * if false it will be removed.
+ * If omitted, the classname will be toggled
+ */
+toggleClass(element, 'test', true)
+```
+
+-----
+
+- `insertAfter` - Insert the supplied HTML String after the element
+- `insertBefore` - Insert the supplied HTML String before the element
+
+```javascript
+const element = document.getElementById('element');
+
+insertAfter(element, '<div>Test</div>');
+insertBefore(element, '<div>Test</div>');
+```
+
+-----
+
+- `trigger` - Fires a custom (or built-in) event
+
+```javascript
+const element = document.getElementById('element');
+
+// The third argument is event data. Can be omitted
+trigger(element, 'click', { data: true })
 ```
 
 ## License
