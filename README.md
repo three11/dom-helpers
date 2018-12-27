@@ -6,7 +6,6 @@
 [![npm](https://img.shields.io/npm/dt/@three11/dom-helpers.svg)](https://www.npmjs.com/package/@three11/dom-helpers)
 [![npm](https://img.shields.io/npm/v/@three11/dom-helpers.svg)](https://www.npmjs.com/package/@three11/dom-helpers)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/three11/dom-helpers/README.md)](https://github.com/three11/dom-helpers/)
-[![Greenkeeper badge](https://badges.greenkeeper.io/three11/dom-helpers.svg)](https://greenkeeper.io/)
 
 # dom-helpers
 
