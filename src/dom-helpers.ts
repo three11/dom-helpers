@@ -1,5 +1,3 @@
-type EventListener<K extends keyof ElementEventMap> = (this: Element, ev: ElementEventMap[K]) => any;
-
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	interface Array<T> {
@@ -19,6 +17,13 @@ declare global {
 	}
 }
 
+export type EventListener<K extends keyof ElementEventMap> = (this: Element, ev: ElementEventMap[K]) => any;
+
+export interface DOMScrollPosition {
+	readonly x: number;
+	readonly y: number;
+}
+
 const D = document;
 
 export function $<E extends HTMLElement>(selector: string, context = D): E | null {
@@ -29,7 +34,7 @@ export function $$<E extends HTMLElement>(selector: string, context = D): E[] {
 	return Array.from(context.querySelectorAll(selector));
 }
 
-export function enableListeners() {
+export function enableListeners(): void {
 	Element.prototype.on = function <K extends keyof ElementEventMap>(
 		type: K,
 		listener: EventListener<K>,
@@ -43,7 +48,7 @@ export function enableListeners() {
 		listener: EventListener<K>,
 		options = false
 	) {
-		this.map(el => {
+		this.forEach(el => {
 			if (el instanceof Element) {
 				el.addEventListener(type, listener, options);
 			}
@@ -61,7 +66,7 @@ export function isElementVisibleInViewport<E extends HTMLElement>(el: E, isParti
 		: top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 }
 
-export function getScrollPosition(el: HTMLElement | Window = window) {
+export function getScrollPosition(el: HTMLElement | Window = window): DOMScrollPosition {
 	return el instanceof Window
 		? {
 				x: el.scrollX,
