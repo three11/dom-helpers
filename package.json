@@ -1,23 +1,17 @@
 {
 	"name": "@three11/dom-helpers",
-	"version": "1.1.0",
+	"version": "2.0.0",
 	"description": "Helper functions for faster DOM scripting",
-	"main": "dist/dom-helpers.js",
-	"scripts": {
-		"dist": "babel src/dom-helpers.js --out-file dist/dom-helpers.js",
-		"minify": "babel src/dom-helpers.js --out-file dist/dom-helpers.min.js --presets minify,@babel/env",
-		"build": "npm run dist && npm run minify"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/three11/dom-helpers.git"
-	},
 	"keywords": [
-		"DOM",
-		"Helpers",
-		"JavaScript",
-		"ES2017"
+		"DOM Helpers",
+		"DOM Scripting",
+		"DOM Functions"
 	],
+	"homepage": "https://github.com/three11/dom-helpers#readme",
+	"bugs": {
+		"url": "https://github.com/three11/dom-helpers/issues"
+	},
+	"license": "GPL-3.0",
 	"authors": [
 		{
 			"name": "Three 11 Ltd",
@@ -35,16 +29,31 @@
 			"role": "Developer"
 		}
 	],
-	"license": "GPL-3.0",
-	"bugs": {
-		"url": "https://github.com/three11/dom-helpers/issues"
+	"repository": {
+		"type": "git",
+		"url": "github:three11/dom-helpers"
 	},
-	"homepage": "https://github.com/three11/dom-helpers#readme",
+	"scripts": {
+		"lint": "eslint 'src/**/*.ts'",
+		"build": "microbundle"
+	},
+	"dependencies": {},
 	"devDependencies": {
-		"@babel/cli": "7.19.3",
-		"@babel/core": "7.20.5",
-		"@babel/plugin-transform-modules-umd": "7.18.6",
-		"@babel/preset-env": "7.20.2",
-		"babel-minify": "0.5.2"
-	}
+		"@typescript-eslint/eslint-plugin": "5.45.0",
+		"@typescript-eslint/parser": "5.45.0",
+		"eslint": "8.28.0",
+		"eslint-config-prettier": "8.5.0",
+		"microbundle": "0.15.1",
+		"typescript": "4.9.3"
+	},
+	"type": "module",
+	"source": "src/dom-helpers.ts",
+	"exports": {
+		"require": "./dist/dom-helpers.cjs",
+		"default": "./dist/dom-helpers.modern.js"
+	},
+	"main": "./dist/dom-helpers.cjs",
+	"types": "./dist/dom-helpers.d.ts",
+	"module": "./dist/dom-helpers.module.js",
+	"unpkg": "./dist/dom-helpers.umd.js"
 }
